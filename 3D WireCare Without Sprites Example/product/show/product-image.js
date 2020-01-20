@@ -1,8 +1,6 @@
 // product-images controls the images on the product show page. 
 // tied closely with product-show.js
-
-
-// we don't use es6, but we want to convert to it soon. Using design pattern to make that easier. 
+// we don't use es6 (yet), but we want to convert to it soon. Using design pattern to make that easier. 
 function productImagesPrototype() {
 	self = this, //reference the object created by this constructor. lexical this.
 	// returns a function to match behavior of overwritten object. 
@@ -26,8 +24,6 @@ function productImagesPrototype() {
 			return;
 		}
 		// clears the zoom. 
-		// e.target can probably also use the this keyword. 
-		// not sure which is faster.
       	$(e.target).trigger('click');
 		$('.thumbnail').removeClass('image-thumbnail-active');
 		$(e.target).addClass('image-thumbnail-active');
@@ -42,11 +38,6 @@ function productImagesPrototype() {
 	},
 	this.toggleZoom = function(target){
 		$(target).toggleClass('main-image-display-zoomed')
-	}
-	this.zoomImage =  function(){
-		// this doesn't do anything on mobile.
-		// maybe return an exception if it's ever called? 
-		return;
 	}
 }
 
